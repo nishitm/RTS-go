@@ -9,6 +9,7 @@ import (
 	"github.com/nishitm/RTS-go/src/pastie/codepad"
 	"github.com/nishitm/RTS-go/src/pastie/kpaste"
 	"github.com/nishitm/RTS-go/src/pastie/slexy"
+	"github.com/nishitm/RTS-go/src/pastie/snipplr"
 	"github.com/nishitm/RTS-go/src/reddit"
 	"github.com/nishitm/RTS-go/src/twitter"
 
@@ -51,6 +52,9 @@ func main() {
 			case "kpaste":
 				kpasteObj := &kpaste.KpasteImplement{}
 				go kpasteObj.GetSearchedTerm(configurations)
+			case "snipplr":
+				snipplrObj := &snipplr.SnipplrImplement{}
+				go snipplrObj.GetSearchedTerm(configurations)
 			}
 		}
 	}

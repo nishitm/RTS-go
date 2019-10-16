@@ -1,4 +1,4 @@
-package kpaste
+package snipplr
 
 import (
 	"fmt"
@@ -14,13 +14,13 @@ import (
 
 var urlMap = make(map[string]bool)
 
-//KpasteImplement struct is used to implement the interface GetSearchedTerm
-type KpasteImplement struct{}
+//SnipplrImplement struct is used to implement the interface GetSearchedTerm
+type SnipplrImplement struct{}
 
-// GetSearchedTerm method implementation for Kpaste
-func (c KpasteImplement) GetSearchedTerm(configuration config.Config) {
+// GetSearchedTerm method implementation for Snipplr
+func (c SnipplrImplement) GetSearchedTerm(configuration config.Config) {
 
-	resp, err := http.Get(configuration.Kpaste.URL)
+	resp, err := http.Get(configuration.Snipplr.URL)
 	if err != nil {
 		log.Print(err)
 		return
@@ -31,17 +31,16 @@ func (c KpasteImplement) GetSearchedTerm(configuration config.Config) {
 		log.Print(err)
 		return
 	}
-	r := regexp.MustCompile(configuration.Kpaste.Regex)
+	r := regexp.MustCompile(configuration.Snipplr.Regex)
 	matches := r.FindAllString(string(html), -1)
-	matches = matches[:len(matches)-1]
 
 	for i, str := range matches {
-		matches[i] = configuration.Kpaste.URLBase + str[8:len(str)-2]
+		matches[i] = configuration.Snipplr.URLBase + str
 	}
 
 	newMap := make(map[string]bool)
 	for _, link := range matches {
-		if len(urlMap) == 10 { //Since Kpaste is giving 10 entries at a time
+		if len(urlMap) == 40 { //Since Snipplr is giving 40 entries at a time
 			_, ok := urlMap[link]
 			if ok {
 				urlMap[link] = true
@@ -86,6 +85,7 @@ func (c KpasteImplement) GetSearchedTerm(configuration config.Config) {
 
 			}
 		}
+
 	}
 
 	for k := range urlMap {
@@ -107,7 +107,7 @@ func CrawlAndSearch(url string, configuration config.Config) bool {
 		os.Exit(1)
 	}
 	found := false
-	for _, term := range configuration.Kpaste.SearchTerms {
+	for _, term := range configuration.Snipplr.SearchTerms {
 		if strings.Contains(string(contents), term) {
 			found = true
 		}

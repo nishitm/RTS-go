@@ -120,7 +120,7 @@ func CrawlAndSearch(url string, configuration config.Config) bool {
 		os.Exit(1)
 	}
 	found := false
-	for _, term := range configuration.Codepad.SearchTerms {
+	for _, term := range configuration.Slexy.SearchTerms {
 		if strings.Contains(string(contents), term) {
 			found = true
 		}

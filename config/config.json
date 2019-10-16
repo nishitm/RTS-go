@@ -6,7 +6,8 @@
         "reddit",
         "codepad",
         "slexy",
-        "kpaste"
+        "kpaste",
+        "snipplr"
     ],
     "twitter": {
         "consumerKey": "",
@@ -52,6 +53,15 @@
         "url": "https://kpaste.net",
         "urlbase": "https://kpaste.net",
         "regex": "\" href=\"/([a-z0-9]*)\">",
+        "searchTerms": [
+            "companyabcd data breach",
+            "companyabcd hack"
+        ]
+    },
+    "snipplr": {
+        "url": "https://snipplr.com/all/",
+        "urlbase": "https://snipplr.com",
+        "regex": "/view/[0-9]*/[a-z0-9-_]*/",
         "searchTerms": [
             "companyabcd data breach",
             "companyabcd hack"
