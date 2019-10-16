@@ -7,7 +7,8 @@
         "codepad",
         "slexy",
         "kpaste",
-        "snipplr"
+        "snipplr",
+        "paste"
     ],
     "twitter": {
         "consumerKey": "",
@@ -62,6 +63,15 @@
         "url": "https://snipplr.com/all/",
         "urlbase": "https://snipplr.com",
         "regex": "/view/[0-9]*/[a-z0-9-_]*/",
+        "searchTerms": [
+            "companyabcd data breach",
+            "companyabcd hack"
+        ]
+    },
+    "paste": {
+        "url": "http://paste.org.ru/",
+        "urlbase": "http://paste.org.ru",
+        "regex": "href='/\\?[a-z0-9]*",
         "searchTerms": [
             "companyabcd data breach",
             "companyabcd hack"

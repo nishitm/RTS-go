@@ -11,6 +11,7 @@ type Config struct {
 	Slexy    SlexyStruct   `json:slexy`
 	Kpaste   KpasteStruct  `json:kpaste`
 	Snipplr  SnipplrStruct `json:snipplr`
+	Paste    PasteStruct   `json:paste`
 	Interval time.Duration `json:interval` //This interval is consecutive scan timings in seconds
 	Sources  []string      `json:sources`
 }
@@ -60,6 +61,14 @@ type KpasteStruct struct {
 
 // SnipplrStruct is the struct for the https://snipplr.com pastie website configurations
 type SnipplrStruct struct {
+	URL         string   `json:url`
+	URLBase     string   `json:urlbase`
+	Regex       string   `json:regex`
+	SearchTerms []string `json:searchTerms`
+}
+
+// PasteStruct is the struct for the http://paste.org.ru pastie website configurations
+type PasteStruct struct {
 	URL         string   `json:url`
 	URLBase     string   `json:urlbase`
 	Regex       string   `json:regex`

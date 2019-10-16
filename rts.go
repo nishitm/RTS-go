@@ -8,6 +8,7 @@ import (
 	"github.com/nishitm/RTS-go/src/github"
 	"github.com/nishitm/RTS-go/src/pastie/codepad"
 	"github.com/nishitm/RTS-go/src/pastie/kpaste"
+	"github.com/nishitm/RTS-go/src/pastie/paste"
 	"github.com/nishitm/RTS-go/src/pastie/slexy"
 	"github.com/nishitm/RTS-go/src/pastie/snipplr"
 	"github.com/nishitm/RTS-go/src/reddit"
@@ -55,6 +56,9 @@ func main() {
 			case "snipplr":
 				snipplrObj := &snipplr.SnipplrImplement{}
 				go snipplrObj.GetSearchedTerm(configurations)
+			case "paste":
+				pasteObj := &paste.PasteImplement{}
+				go pasteObj.GetSearchedTerm(configurations)
 			}
 		}
 	}
