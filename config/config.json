@@ -4,6 +4,7 @@
         "twitter",
         "github",
         "reddit",
+        "gist",
         "codepad",
         "slexy",
         "kpaste",
@@ -75,6 +76,15 @@
         "searchTerms": [
             "companyabcd data breach",
             "companyabcd hack"
+        ]
+    },
+    "gist": {
+        "url": "https://gist.github.com/discover",
+        "urlbase": "https://gist.github.com",
+        "regex": "<a href=\"/([A-Za-z0-9]+/[A-Za-z0-9]+)\"><",
+        "searchTerms": [
+            "companyabcd hack",
+            "companyabcd data breach"
         ]
     }
 }

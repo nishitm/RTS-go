@@ -5,6 +5,8 @@ import (
 	"time"
 
 	"github.com/nishitm/RTS-go/config"
+	"github.com/nishitm/RTS-go/src/gist"
+
 	"github.com/nishitm/RTS-go/src/github"
 	"github.com/nishitm/RTS-go/src/pastie/codepad"
 	"github.com/nishitm/RTS-go/src/pastie/kpaste"
@@ -59,6 +61,9 @@ func main() {
 			case "paste":
 				pasteObj := &paste.PasteImplement{}
 				go pasteObj.GetSearchedTerm(configurations)
+			case "gist":
+				gistObj := &gist.GistImplement{}
+				go gistObj.GetSearchedTerm(configurations)
 			}
 		}
 	}
