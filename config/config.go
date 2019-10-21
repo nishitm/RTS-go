@@ -7,6 +7,7 @@ type Config struct {
 	Twitter  TwitterStruct `json:twitter`
 	Reddit   RedditStruct  `json:reddit`
 	Github   GithubStruct  `json:github`
+	Gist     GistStruct    `json:gist`
 	Codepad  CodepadStruct `json:codepad`
 	Slexy    SlexyStruct   `json:slexy`
 	Kpaste   KpasteStruct  `json:kpaste`
@@ -69,6 +70,14 @@ type SnipplrStruct struct {
 
 // PasteStruct is the struct for the http://paste.org.ru pastie website configurations
 type PasteStruct struct {
+	URL         string   `json:url`
+	URLBase     string   `json:urlbase`
+	Regex       string   `json:regex`
+	SearchTerms []string `json:searchTerms`
+}
+
+// GistStruct is the struct for the https://gist.github.com website configurations
+type GistStruct struct {
 	URL         string   `json:url`
 	URLBase     string   `json:urlbase`
 	Regex       string   `json:regex`
