@@ -9,7 +9,8 @@
         "slexy",
         "kpaste",
         "snipplr",
-        "paste"
+        "paste",
+        "pastebinFR"
     ],
     "twitter": {
         "consumerKey": "",
@@ -86,5 +87,13 @@
             "companyabcd hack",
             "companyabcd data breach"
         ]
-    }
+    },
+    "pastebinFR": {
+        "url": "http://pastebin.fr/",
+        "regex": "http://pastebin.fr/[0-9]*",
+        "searchTerms": [
+            "companyabcd data breach",
+            "companyabcd hack"
+        ]
+    },
 }

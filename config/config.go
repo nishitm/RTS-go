@@ -4,17 +4,18 @@ import "time"
 
 // Config struct contains all the source configurations
 type Config struct {
-	Twitter  TwitterStruct `json:twitter`
-	Reddit   RedditStruct  `json:reddit`
-	Github   GithubStruct  `json:github`
-	Gist     GistStruct    `json:gist`
-	Codepad  CodepadStruct `json:codepad`
-	Slexy    SlexyStruct   `json:slexy`
-	Kpaste   KpasteStruct  `json:kpaste`
-	Snipplr  SnipplrStruct `json:snipplr`
-	Paste    PasteStruct   `json:paste`
-	Interval time.Duration `json:interval` //This interval is consecutive scan timings in seconds
-	Sources  []string      `json:sources`
+	Twitter    TwitterStruct    `json:twitter`
+	Reddit     RedditStruct     `json:reddit`
+	Github     GithubStruct     `json:github`
+	Gist       GistStruct       `json:gist`
+	Codepad    CodepadStruct    `json:codepad`
+	Slexy      SlexyStruct      `json:slexy`
+	Kpaste     KpasteStruct     `json:kpaste`
+	Snipplr    SnipplrStruct    `json:snipplr`
+	Paste      PasteStruct      `json:paste`
+	PastebinFR PastebinFRStruct `json:pastebinFR`
+	Interval   time.Duration    `json:interval` //This interval is consecutive scan timings in seconds
+	Sources    []string         `json:sources`
 }
 
 // TwitterStruct is the struct for twitter configurations
@@ -80,6 +81,13 @@ type PasteStruct struct {
 type GistStruct struct {
 	URL         string   `json:url`
 	URLBase     string   `json:urlbase`
+	Regex       string   `json:regex`
+	SearchTerms []string `json:searchTerms`
+}
+
+// PastebinFRStruct is the struct for the http://pastebin.fr website configurations
+type PastebinFRStruct struct {
+	URL         string   `json:url`
 	Regex       string   `json:regex`
 	SearchTerms []string `json:searchTerms`
 }

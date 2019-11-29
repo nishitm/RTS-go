@@ -6,11 +6,11 @@ import (
 
 	"github.com/nishitm/RTS-go/config"
 	"github.com/nishitm/RTS-go/src/gist"
-
 	"github.com/nishitm/RTS-go/src/github"
 	"github.com/nishitm/RTS-go/src/pastie/codepad"
 	"github.com/nishitm/RTS-go/src/pastie/kpaste"
 	"github.com/nishitm/RTS-go/src/pastie/paste"
+	"github.com/nishitm/RTS-go/src/pastie/pastebin_fr"
 	"github.com/nishitm/RTS-go/src/pastie/slexy"
 	"github.com/nishitm/RTS-go/src/pastie/snipplr"
 	"github.com/nishitm/RTS-go/src/reddit"
@@ -64,6 +64,9 @@ func main() {
 			case "gist":
 				gistObj := &gist.GistImplement{}
 				go gistObj.GetSearchedTerm(configurations)
+			case "pastebinFR":
+				pastebinFRObj := &pastebin_fr.PastebinFRImplement{}
+				go pastebinFRObj.GetSearchedTerm(configurations)
 			}
 		}
 	}
